@@ -1,11 +1,9 @@
 # Site settings
-title: Andrej Karpathy blog
-email: 
-description: "Musings of a Computer Scientist."
+title: Igor Klimczak
+email: ""
+description: "Notes, projects, and LaTeX-ready writing."
 baseurl: ""
-url: "http://karpathy.github.io"
-twitter_username: karpathy
-github_username:  karpathy
+url: ""
 
 # Build settings
 markdown: kramdown

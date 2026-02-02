@@ -1,4 +1,3 @@
-# My blog
+# Igor Klimczak
 
-This is my blog, uses [Jekyll](http://jekyllrb.com/). I was tired of bloated, slow Wordpress that locked up all my content.
-
+Minimal Jekyll site with KaTeX enabled for LaTeX-style writing.
