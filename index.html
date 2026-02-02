@@ -3,8 +3,9 @@ layout: default
 title: Home
 ---
 
-<h1>Igor Klimczak</h1>
-<p class="muted">Minimal notes on research, software, and math.</p>
+<h1>Hello</h1>
+<img class="hero" src="/assets/hero.svg" alt="Night desert illustration">
+<p class="intro muted">Welcome to my research blog. I write about training dynamics, optimization, and math.</p>
 
 <h2>Projects</h2>
 <ul class="list">
@@ -23,8 +24,13 @@ title: Home
   <ul class="list">
     {% for post in site.posts %}
       <li>
-        <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        <div class="meta">{{ post.date | date: "%B %-d, %Y" }}</div>
+        <div class="post-card">
+          <h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+          <p>{{ post.excerpt | strip_html }}</p>
+          {% assign words = post.content | number_of_words %}
+          {% assign minutes = words | divided_by: 200 | plus: 1 %}
+          <div class="meta">{{ post.date | date: "%B %-d, %Y" }} · {{ minutes }} min</div>
+        </div>
       </li>
     {% endfor %}
   </ul>

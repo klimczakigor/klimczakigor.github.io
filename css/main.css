@@ -1,7 +1,19 @@
 :root {
-  --text: #111;
-  --muted: #666;
-  --link: #111;
+  --bg: #ffffff;
+  --text: #111111;
+  --muted: #666666;
+  --card: #f6f6f6;
+  --link: #111111;
+  --border: #e5e5e5;
+}
+
+[data-theme="dark"] {
+  --bg: #0f0f10;
+  --text: #f2f2f2;
+  --muted: #a0a0a0;
+  --card: #1b1b1d;
+  --link: #f2f2f2;
+  --border: #2b2b2e;
 }
 
 * {
@@ -12,7 +24,7 @@ body {
   margin: 0;
   padding: 0;
   color: var(--text);
-  background: #fff;
+  background: var(--bg);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.6;
@@ -46,6 +58,7 @@ body {
   display: flex;
   gap: 14px;
   font-size: 14px;
+  align-items: center;
 }
 
 .page-content {
@@ -74,6 +87,31 @@ a {
   text-underline-offset: 2px;
 }
 
+.theme-toggle {
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  border-radius: 999px;
+  width: 30px;
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.hero {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+  margin: 12px 0 10px;
+}
+
+.intro {
+  margin-bottom: 14px;
+}
+
 .muted {
   color: var(--muted);
 }
@@ -81,16 +119,33 @@ a {
 .list {
   list-style: none;
   padding: 0;
-  margin: 0 0 8px;
+  margin: 0 0 16px;
 }
 
 .list li {
-  margin: 0 0 10px;
+  margin: 0 0 14px;
 }
 
 .list .meta {
   color: var(--muted);
   font-size: 14px;
+}
+
+.post-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px 20px;
+}
+
+.post-card h3 {
+  margin: 0 0 8px;
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.post-card p {
+  margin: 0 0 8px;
 }
 
 @media (max-width: 640px) {
