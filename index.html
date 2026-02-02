@@ -3,26 +3,31 @@ layout: default
 title: Home
 ---
 
-<h1>Hello</h1>
+<h1>Igor Klimczak</h1>
+<p class="muted">Minimal notes on research, software, and math.</p>
 
-<div class="intro">
-  <img src="/assets/profile.svg" alt="Igor Klimczak">
-  <div>
-    <p>Welcome to my research blog.</p>
-    <p>I'm Igor Klimczak.</p>
-  </div>
-</div>
+<h2>Projects</h2>
+<ul class="list">
+  <li>
+    <a href="/projects/latex-playground/">LaTeX Playground</a>
+    <div class="meta">A clean page for equations and notes.</div>
+  </li>
+  <li>
+    <a href="/projects/sample-project/">Sample Project</a>
+    <div class="meta">Placeholder for a future write-up.</div>
+  </li>
+</ul>
 
+<h2>Posts</h2>
 {% if site.posts.size > 0 %}
-  {% for post in site.posts %}
-    <div class="post-item">
-      <h2><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
-      <p>{{ post.excerpt | strip_html }}</p>
-      {% assign words = post.content | number_of_words %}
-      {% assign minutes = words | divided_by: 200 | plus: 1 %}
-      <p class="post-meta">{{ post.date | date: "%B %-d, %Y" }} · {{ minutes }} min</p>
-    </div>
-  {% endfor %}
+  <ul class="list">
+    {% for post in site.posts %}
+      <li>
+        <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        <div class="meta">{{ post.date | date: "%B %-d, %Y" }}</div>
+      </li>
+    {% endfor %}
+  </ul>
 {% else %}
   <p class="muted">No posts yet.</p>
 {% endif %}
