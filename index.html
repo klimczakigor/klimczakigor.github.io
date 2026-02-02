@@ -1,38 +1,28 @@
 ---
 layout: default
-title: Igor Klimczak
+title: Home
 ---
 
-<section class="intro">
-  <p>Minimal notes and projects. LaTeX-ready writing lives here.</p>
-</section>
+<h1>Hello</h1>
 
-<hr>
+<div class="intro">
+  <img src="/assets/profile.svg" alt="Igor Klimczak">
+  <div>
+    <p>Welcome to my research blog.</p>
+    <p>I'm Igor Klimczak.</p>
+  </div>
+</div>
 
-<section>
-  <h2>Projects</h2>
-  <ul class="post-list">
-    <li>
-      <a href="/projects/latex-playground/">LaTeX Playground</a>
-      <span>empty template</span>
-    </li>
-  </ul>
-</section>
-
-<hr>
-
-<section>
-  <h2>Posts</h2>
-  {% if site.posts.size > 0 %}
-    <ul class="post-list">
-      {% for post in site.posts %}
-        <li>
-          <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-          <span>{{ post.date | date: "%Y-%m-%d" }}</span>
-        </li>
-      {% endfor %}
-    </ul>
-  {% else %}
-    <p class="muted">No posts yet.</p>
-  {% endif %}
-</section>
+{% if site.posts.size > 0 %}
+  {% for post in site.posts %}
+    <div class="post-item">
+      <h2><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
+      <p>{{ post.excerpt | strip_html }}</p>
+      {% assign words = post.content | number_of_words %}
+      {% assign minutes = words | divided_by: 200 | plus: 1 %}
+      <p class="post-meta">{{ post.date | date: "%B %-d, %Y" }} · {{ minutes }} min</p>
+    </div>
+  {% endfor %}
+{% else %}
+  <p class="muted">No posts yet.</p>
+{% endif %}
