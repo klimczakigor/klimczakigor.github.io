@@ -7,6 +7,15 @@
   --border: #e5e5e5;
 }
 
+[data-theme="light"] {
+  --bg: #ffffff;
+  --text: #111111;
+  --muted: #666666;
+  --card: #f6f6f6;
+  --link: #111111;
+  --border: #e5e5e5;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --bg: #0f0f10;
@@ -112,7 +121,7 @@ a {
 .theme-toggle {
   border: 0;
   background: transparent;
-  color: var(--text);
+  color: var(--link);
   border-radius: 999px;
   width: 26px;
   height: 26px;
