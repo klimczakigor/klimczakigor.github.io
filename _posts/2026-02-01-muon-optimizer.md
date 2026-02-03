@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Muon: An optimizer for hidden layers in neural networks"
+tags: [muon]
 ---
 
 Muon is a placeholder name for an optimizer that targets hidden-layer updates.

@@ -132,20 +132,71 @@ a {
   cursor: pointer;
 }
 
-.moon-icon {
-  width: 22px;
-  height: 22px;
+.theme-icon {
+  width: 20px;
+  height: 20px;
   display: block;
   fill: none;
   stroke: currentColor;
-  stroke-width: 2;
+  stroke-width: 1.8;
   stroke-linecap: round;
   stroke-linejoin: round;
+}
+
+[data-theme="dark"] .theme-sun {
+  display: block;
+}
+
+[data-theme="dark"] .theme-moon {
+  display: none;
+}
+
+[data-theme="light"] .theme-sun {
+  display: none;
+}
+
+[data-theme="light"] .theme-moon {
+  display: block;
 }
 
 .theme-toggle:focus-visible {
   outline: 2px solid var(--border);
   outline-offset: 2px;
+}
+
+pre,
+code {
+  font-family: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+pre {
+  background: #2b2b31;
+  color: #e6e6e6;
+  border-radius: 12px;
+  padding: 16px 18px;
+  overflow-x: auto;
+  line-height: 1.6;
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+}
+
+code {
+  background: rgba(127, 127, 127, 0.12);
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+[data-theme="dark"] pre {
+  background: #2a2a2f;
+  color: #f1f1f1;
+}
+
+[data-theme="dark"] code {
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .hero {

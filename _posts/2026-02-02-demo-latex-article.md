@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Demo: A LaTeX-first note on optimization"
+tags: [muon]
 ---
 
 This is a short, fake article meant to show how math renders.
