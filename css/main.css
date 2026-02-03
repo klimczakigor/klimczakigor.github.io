@@ -136,12 +136,12 @@ a {
 }
 
 .theme-icon {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   display: block;
   fill: none;
   stroke: currentColor;
-  stroke-width: 1.8;
+  stroke-width: 2.4;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
@@ -168,6 +168,14 @@ html:not([data-theme]) .theme-sun {
 
 html:not([data-theme]) .theme-moon {
   display: block;
+}
+
+html[data-theme="light"] .theme-toggle {
+  color: #111111;
+}
+
+html[data-theme="dark"] .theme-toggle {
+  color: #f2f2f2;
 }
 
 .theme-toggle:focus-visible {
