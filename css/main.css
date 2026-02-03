@@ -66,7 +66,7 @@ body {
 .site-left {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 }
 
 .site-title {
@@ -114,8 +114,8 @@ a {
   background: transparent;
   color: var(--text);
   border-radius: 999px;
-  width: 22px;
-  height: 22px;
+  width: 26px;
+  height: 26px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -124,9 +124,12 @@ a {
 }
 
 .moon-icon {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   display: block;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
 }
 
 .theme-toggle:focus-visible {
