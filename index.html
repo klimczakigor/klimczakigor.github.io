@@ -7,33 +7,27 @@ title: Home
 <img class="hero" src="/assets/hero.svg" alt="Night desert illustration">
 <p class="intro muted">Welcome to my research blog. I write about training dynamics, optimization, and math.</p>
 
-<h2>Projects</h2>
-<ul class="list">
-  <li>
-    <a href="/projects/latex-playground/">LaTeX Playground</a>
-    <div class="meta">A clean page for equations and notes.</div>
+<ul class="card-list">
+  <li class="project-card">
+    <div class="badge">Project</div>
+    <h3><a href="/projects/latex-playground/">LaTeX Playground</a></h3>
+    <p>A clean page for equations and notes.</p>
+    <div class="card-meta">Updated recently</div>
   </li>
-  <li>
-    <a href="/projects/sample-project/">Sample Project</a>
-    <div class="meta">Placeholder for a future write-up.</div>
+  <li class="project-card">
+    <div class="badge">Project</div>
+    <h3><a href="/projects/sample-project/">Sample Project</a></h3>
+    <p>Placeholder for a future write-up.</p>
+    <div class="card-meta">Draft</div>
   </li>
+  {% for post in site.posts %}
+    <li class="post-card">
+      <div class="badge">Post</div>
+      <h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+      <p>{{ post.excerpt | strip_html }}</p>
+      {% assign words = post.content | number_of_words %}
+      {% assign minutes = words | divided_by: 200 | plus: 1 %}
+      <div class="card-meta">{{ post.date | date: "%B %-d, %Y" }} · {{ minutes }} min</div>
+    </li>
+  {% endfor %}
 </ul>
-
-<h2>Posts</h2>
-{% if site.posts.size > 0 %}
-  <ul class="list">
-    {% for post in site.posts %}
-      <li>
-        <div class="post-card">
-          <h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
-          <p>{{ post.excerpt | strip_html }}</p>
-          {% assign words = post.content | number_of_words %}
-          {% assign minutes = words | divided_by: 200 | plus: 1 %}
-          <div class="meta">{{ post.date | date: "%B %-d, %Y" }} · {{ minutes }} min</div>
-        </div>
-      </li>
-    {% endfor %}
-  </ul>
-{% else %}
-  <p class="muted">No posts yet.</p>
-{% endif %}
