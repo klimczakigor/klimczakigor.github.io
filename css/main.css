@@ -130,6 +130,9 @@ a {
   justify-content: center;
   padding: 0;
   cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  box-shadow: none;
 }
 
 .theme-icon {
@@ -170,6 +173,10 @@ html:not([data-theme]) .theme-moon {
 .theme-toggle:focus-visible {
   outline: 2px solid var(--border);
   outline-offset: 2px;
+}
+
+.theme-toggle:focus {
+  outline: none;
 }
 
 pre,
