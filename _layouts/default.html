@@ -14,15 +14,30 @@
       (function () {
         var root = document.documentElement;
         var stored = localStorage.getItem("theme");
+        var media = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)");
+        function applyTheme(value) {
+          root.setAttribute("data-theme", value);
+        }
         if (stored) {
-          root.setAttribute("data-theme", stored);
+          applyTheme(stored);
+        } else if (media && media.matches) {
+          applyTheme("dark");
+        } else {
+          applyTheme("light");
+        }
+        if (media) {
+          media.addEventListener("change", function (event) {
+            if (!localStorage.getItem("theme")) {
+              applyTheme(event.matches ? "dark" : "light");
+            }
+          });
         }
         var toggle = document.querySelector("[data-theme-toggle]");
         if (toggle) {
           toggle.addEventListener("click", function () {
             var current = root.getAttribute("data-theme") || "light";
             var next = current === "light" ? "dark" : "light";
-            root.setAttribute("data-theme", next);
+            applyTheme(next);
             localStorage.setItem("theme", next);
           });
         }

@@ -36,6 +36,10 @@ body {
   padding: 0 24px;
 }
 
+.header-wrap {
+  max-width: 1040px;
+}
+
 .site-header {
   padding: 20px 0 12px;
 }
@@ -98,13 +102,19 @@ a {
   background: transparent;
   color: var(--text);
   border-radius: 999px;
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 13px;
+  padding: 0;
   cursor: pointer;
+}
+
+.moon-icon {
+  width: 18px;
+  height: 18px;
+  display: block;
 }
 
 .theme-toggle:focus-visible {
