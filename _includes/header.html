@@ -1,10 +1,12 @@
 <header class="site-header">
   <div class="wrap">
-    <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
-    <nav class="site-nav">
+    <div class="site-left">
+      <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
       <button class="theme-toggle" type="button" aria-label="Toggle color theme" data-theme-toggle>
         <span aria-hidden="true">◐</span>
       </button>
+    </div>
+    <nav class="site-nav">
       {% for page in site.pages %}
         {% if page.title and page.includelink %}
           <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>

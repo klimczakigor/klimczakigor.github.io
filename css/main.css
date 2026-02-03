@@ -47,6 +47,12 @@ body {
   gap: 16px;
 }
 
+.site-left {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .site-title {
   font-size: 18px;
   font-weight: 600;
