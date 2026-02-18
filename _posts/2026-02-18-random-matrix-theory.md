@@ -24,3 +24,4 @@ def newtonschulz5(G, steps=5, eps=1e-7):
         X = X.T
 
     return X
+```
