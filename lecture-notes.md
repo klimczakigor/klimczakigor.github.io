@@ -1,17 +1,17 @@
 ---
 layout: page
-title: Muon
+title: Lecture Notes
 includelink: true
-nav_order: 1
+nav_order: 2
 ---
 
-Notes and posts tagged with “muon”.
+Lecture notes and write-ups.
 
-{% assign muon_posts = site.posts | where_exp: "post", "post.tags contains 'muon'" %}
+{% assign lecture_posts = site.posts | where_exp: "post", "post.tags contains 'lecture-notes'" %}
 
-{% if muon_posts.size > 0 %}
+{% if lecture_posts.size > 0 %}
 <ul class="card-list">
-  {% for post in muon_posts %}
+  {% for post in lecture_posts %}
     <li class="post-card">
       <div class="badge">Post</div>
       <h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
@@ -23,5 +23,5 @@ Notes and posts tagged with “muon”.
   {% endfor %}
 </ul>
 {% else %}
-<p class="muted">No muon posts yet.</p>
+<p class="muted">No lecture notes yet.</p>
 {% endif %}

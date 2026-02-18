@@ -2,6 +2,7 @@
 layout: page
 title: About
 includelink: true
+nav_order: 3
 ---
 
 Igor Klimczak.
